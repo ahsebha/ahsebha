@@ -1,204 +1,265 @@
-
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>حاسبة المعدل التراكمي | احسبها</title>
+```
+<meta charset="UTF-8">
 
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>حاسبة المعدل التراكمي | احسبها</title>
+
+<meta name="description"
+      content="احسب معدلك التراكمي بسهولة مع حاسبة المعدل التراكمي من احسبها. أدخل معدلك السابق والساعات ومواد الفصل الحالي لمعرفة المعدل الجديد.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical"
+      href="https://ahsebha.github.io/ahsebha/gpa.html">
+
+<!-- Open Graph -->
+<meta property="og:title"
+      content="حاسبة المعدل التراكمي | احسبها">
+
+<meta property="og:description"
+      content="حاسبة مجانية لحساب المعدل التراكمي الجديد بعد إضافة مواد الفصل الحالي.">
+
+<meta property="og:url"
+      content="https://ahsebha.github.io/ahsebha/gpa.html">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:locale"
+      content="ar_JO">
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
 <header>
-    <div class="container nav-container">
 
-        <div class="logo">
-            🧮 احسبها
-        </div>
+```
+<div class="container nav-container">
 
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="index.html#categories">التصنيفات</a>
-            <a href="index.html#calculators">الحاسبات</a>
-        </nav>
-
+    <div class="logo">
+        🧮 احسبها
     </div>
-</header>
 
+    <nav aria-label="القائمة الرئيسية">
+
+        <a href="index.html">
+            الرئيسية
+        </a>
+
+        <a href="index.html#categories">
+            التصنيفات
+        </a>
+
+        <a href="index.html#calculators">
+            الحاسبات
+        </a>
+
+    </nav>
+
+</div>
+```
+
+</header>
 
 <main class="calculator-page">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="calculator-heading">
+    <div class="calculator-heading">
 
-            <h1>حاسبة المعدل التراكمي</h1>
-
-            <p>
-                احسب معدلك التراكمي الجديد بسهولة بعد إضافة مواد الفصل الحالي.
-            </p>
-
-        </div>
-
-
-        <!-- المعدل السابق -->
-
-        <div class="gpa-box">
-
-            <h2>بياناتك السابقة</h2>
-
-            <div class="previous-data">
-
-                <div class="input-group">
-
-                    <label for="previousGPA">
-                        المعدل التراكمي السابق
-                    </label>
-
-                    <input
-                        type="number"
-                        id="previousGPA"
-                        min="0"
-                        max="100"
-                        step="0.01"
-                        placeholder="مثال: 66.4"
-                    >
-
-                </div>
-
-
-                <div class="input-group">
-
-                    <label for="previousHours">
-                        عدد الساعات المقطوعة
-                    </label>
-
-                    <input
-                        type="number"
-                        id="previousHours"
-                        min="0"
-                        step="1"
-                        placeholder="مثال: 80"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- مواد الفصل الحالي -->
-
-        <div class="gpa-box">
-
-            <h2>مواد الفصل الحالي</h2>
-
-            <div id="subjects">
-
-                <div class="subject-row">
-
-                    <input
-                        type="text"
-                        placeholder="اسم المادة"
-                        class="subject-name"
-                    >
-
-                    <input
-                        type="number"
-                        placeholder="الساعات"
-                        class="subject-hours"
-                        min="1"
-                        step="1"
-                    >
-
-                    <input
-                        type="number"
-                        placeholder="العلامة"
-                        class="subject-grade"
-                        min="0"
-                        max="100"
-                        step="0.01"
-                    >
-
-                    <button
-                        type="button"
-                        class="delete-button"
-                        onclick="removeSubject(this)"
-                    >
-                        حذف
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <button
-                type="button"
-                class="add-button"
-                onclick="addSubject()"
-            >
-                + إضافة مادة
-            </button>
-
-
-            <button
-                type="button"
-                class="calculate-button"
-                onclick="calculateGPA()"
-            >
-                احسب المعدل التراكمي
-            </button>
-
-
-            <div
-                id="result"
-                class="result"
-                style="display: none;"
-            ></div>
-
-        </div>
-
-
-        <div class="info-box">
-
-            <h3>كيف يتم حساب المعدل التراكمي؟</h3>
-
-            <p>
-                يتم احتساب المعدل الجديد بناءً على معدلك التراكمي السابق،
-                وعدد الساعات المقطوعة، ونتائج مواد الفصل الحالي.
-            </p>
-
-            <p>
-                <strong>المعدل التراكمي الجديد =</strong>
-                مجموع النقاط السابقة والحالية ÷ مجموع الساعات.
-            </p>
-
-        </div>
-
-    </div>
-
-</main>
-
-
-<footer>
-
-    <div class="container">
+        <h1>
+            حاسبة المعدل التراكمي
+        </h1>
 
         <p>
-            © 2026 احسبها - جميع الحقوق محفوظة
+            احسب معدلك التراكمي الجديد بسهولة بعد إضافة
+            مواد الفصل الحالي باستخدام حاسبة المعدل التراكمي
+            المجانية من احسبها.
         </p>
 
     </div>
 
-</footer>
 
+    <!-- المعدل السابق -->
+
+    <div class="gpa-box">
+
+        <h2>
+            بياناتك السابقة
+        </h2>
+
+        <div class="previous-data">
+
+            <div class="input-group">
+
+                <label for="previousGPA">
+                    المعدل التراكمي السابق
+                </label>
+
+                <input
+                    type="number"
+                    id="previousGPA"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    placeholder="مثال: 66.4"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="previousHours">
+                    عدد الساعات المقطوعة
+                </label>
+
+                <input
+                    type="number"
+                    id="previousHours"
+                    min="0"
+                    step="1"
+                    placeholder="مثال: 80"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- مواد الفصل الحالي -->
+
+    <div class="gpa-box">
+
+        <h2>
+            مواد الفصل الحالي
+        </h2>
+
+        <div id="subjects">
+
+            <div class="subject-row">
+
+                <input
+                    type="text"
+                    placeholder="اسم المادة"
+                    class="subject-name"
+                >
+
+                <input
+                    type="number"
+                    placeholder="الساعات"
+                    class="subject-hours"
+                    min="1"
+                    step="1"
+                >
+
+                <input
+                    type="number"
+                    placeholder="العلامة"
+                    class="subject-grade"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                >
+
+                <button
+                    type="button"
+                    class="delete-button"
+                    onclick="removeSubject(this)"
+                >
+                    حذف
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="add-button"
+            onclick="addSubject()"
+        >
+            + إضافة مادة
+        </button>
+
+
+        <button
+            type="button"
+            class="calculate-button"
+            onclick="calculateGPA()"
+        >
+            احسب المعدل التراكمي
+        </button>
+
+
+        <div
+            id="result"
+            class="result"
+            style="display: none;"
+        ></div>
+
+    </div>
+
+
+    <!-- شرح الحاسبة -->
+
+    <div class="info-box">
+
+        <h2>
+            كيف يتم حساب المعدل التراكمي؟
+        </h2>
+
+        <p>
+            يتم احتساب المعدل الجديد بناءً على معدلك التراكمي
+            السابق، وعدد الساعات المقطوعة، ونتائج مواد الفصل الحالي.
+        </p>
+
+        <p>
+            <strong>
+                المعدل التراكمي الجديد =
+            </strong>
+            مجموع النقاط السابقة والحالية ÷ مجموع الساعات.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</main>
+
+<footer>
+
+```
+<div class="container">
+
+    <p>
+        © 2026 احسبها - جميع الحقوق محفوظة
+    </p>
+
+</div>
+```
+
+</footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
