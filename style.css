@@ -949,3 +949,234 @@ footer p {
 .fuel-box input:focus {
     border-color: #4f46e5;
 }
+
+/* =========================================
+PREMIUM GPA CALCULATOR
+========================================= */
+
+.gpa-box {
+border: 1px solid #e5e7eb;
+position: relative;
+overflow: hidden;
+transition: 0.3s ease;
+}
+
+.gpa-box {
+box-shadow: 0 15px 40px rgba(79, 70, 229, 0.10);
+transform: translateY(-2px);
+}
+
+.gpa-box h2 {
+color: #111827;
+font-size: 23px;
+margin-bottom: 25px;
+position: relative;
+padding-right: 15px;
+}
+
+.gpa-box h2::before {
+content: "";
+position: absolute;
+right: 0;
+top: 4px;
+width: 4px;
+height: 24px;
+background: #4f46e5;
+border-radius: 10px;
+}
+
+/* =========================
+PREVIOUS DATA
+========================= */
+
+.previous-data {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.previous-data .input-group {
+background: #f8f9ff;
+padding: 20px;
+border: 1px solid #e5e7eb;
+border-radius: 15px;
+}
+
+.previous-data label {
+display: block;
+font-weight: bold;
+color: #374151;
+margin-bottom: 10px;
+}
+
+.previous-data input {
+width: 100%;
+padding: 15px;
+border: 2px solid #e5e7eb;
+border-radius: 11px;
+background: white;
+outline: none;
+font-size: 17px;
+transition: 0.25s;
+}
+
+.previous-data input {
+border-color: #4f46e5;
+box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.10);
+}
+
+/* =========================
+SUBJECTS AREA
+========================= */
+
+#subjects {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.subject-row {
+background: #f8f9ff;
+border: 1px solid #e5e7eb;
+padding: 12px;
+border-radius: 14px;
+margin-bottom: 0;
+transition: 0.25s;
+}
+
+.subject-row {
+border-color: #c7d2fe;
+box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.subject-row input {
+background: white;
+border: 2px solid #e5e7eb;
+border-radius: 10px;
+padding: 13px;
+transition: 0.25s;
+}
+
+.subject-row input {
+border-color: #4f46e5;
+box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+}
+
+/* =========================
+DELETE BUTTON
+========================= */
+
+.delete-button {
+transition: 0.2s;
+font-size: 16px;
+font-weight: bold;
+}
+
+.delete-button {
+transform: scale(1.04);
+}
+
+/* =========================
+ADD SUBJECT
+========================= */
+
+.add-button {
+margin-top: 20px;
+padding: 13px 20px;
+border: 2px dashed #c7d2fe;
+background: #f8f9ff;
+border-radius: 12px;
+font-size: 15px;
+transition: 0.25s;
+}
+
+.add-button {
+background: #eef2ff;
+border-color: #818cf8;
+transform: translateY(-1px);
+}
+
+/* =========================
+CALCULATE BUTTON
+========================= */
+
+.gpa-box .calculate-button {
+margin-top: 20px;
+padding: 17px;
+border-radius: 12px;
+font-size: 18px;
+box-shadow: 0 8px 20px rgba(79, 70, 229, 0.20);
+}
+
+.gpa-box .calculate-button {
+box-shadow: 0 12px 25px rgba(79, 70, 229, 0.28);
+}
+
+/* =========================
+GPA RESULT
+========================= */
+
+.gpa-box .result {
+margin-top: 25px;
+padding: 35px 25px;
+border: 1px solid #c7d2fe;
+background: linear-gradient(135deg, #eef2ff, #f8f9ff);
+border-radius: 18px;
+}
+
+.gpa-box .result span {
+font-size: 16px;
+font-weight: bold;
+color: #6b7280;
+}
+
+.gpa-box .result strong {
+font-size: 64px;
+font-weight: 800;
+margin: 8px 0;
+}
+
+.gpa-box .result p {
+color: #374151;
+font-size: 15px;
+}
+
+/* =========================
+GPA MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+.previous-data {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.previous-data .input-group {
+    padding: 16px;
+}
+
+.subject-row {
+    grid-template-columns: 1fr 1fr;
+    padding: 12px;
+}
+
+.subject-name {
+    grid-column: 1 / 3;
+}
+
+.subject-hours,
+.subject-grade {
+    width: 100%;
+}
+
+.delete-button {
+    grid-column: 1 / 3;
+    height: 42px;
+}
+
+.gpa-box .result strong {
+    font-size: 50px;
+}
+
+}
